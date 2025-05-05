@@ -1,0 +1,52 @@
+.features {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .feature-card {
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  /* In Features.css */
+.feature-card {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .feature-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover .feature-icon {
+    transform: scale(1.1);
+  }

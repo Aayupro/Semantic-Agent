@@ -1,0 +1,306 @@
+/* ========== Color Variables ========== */
+:root {
+    /* Primary Color Palette */
+    --color-primary: #0ea5e9;
+    --color-primary-dark: #0369a1;
+    --color-primary-darker: #0c4a6e;
+    
+    /* Secondary Color Palette */
+    --color-secondary: #8b5cf6;
+    --color-secondary-light: #a78bfa;
+    
+    /* Background Colors */
+    --color-bg-dark: #0f172a;
+    --color-bg-darker: #020617;
+    
+    /* Text Colors */
+    --color-text-light: #f8fafc;
+    --color-text-lighter: #ffffff;
+    --color-text-muted: #94a3b8;
+    
+    /* State Colors */
+    --color-success: #10b981;
+    --color-error: #ef4444;
+    --color-warning: #f59e0b;
+    
+    /* Gradient Colors */
+    --gradient-primary: linear-gradient(135deg, #0c4a6e 0%, #020617 100%);
+    --gradient-instagram: linear-gradient(45deg, #405de6, #833ab4, #c13584, #e1306c, #fd1d1d);
+    --gradient-youtube: linear-gradient(to right, #ff5e62, #ff9966);
+  }
+  
+  /* ========== Base Styles ========== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--color-text-light);
+    padding: 2rem;
+  }
+  
+  /* ========== Background Styles ========== */
+  .background-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .animated-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  .particle-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.1) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+  }
+  
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* ========== Content Card ========== */
+  .glass-card {
+    background: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.03);
+    padding: 3rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem;
+  }
+  
+  /* ========== Typography ========== */
+  .text-primary {
+    color: var(--color-text-lighter);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .text-secondary {
+    color: var(--color-text-muted);
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    min-height: 2rem;
+  }
+  
+  .typed-text {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+  
+  .cursor {
+    animation: blink 1s infinite;
+    color: var(--color-primary);
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  /* ========== Form Elements ========== */
+  .url-form {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .input-container input {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    border: none;
+    border-radius: 0.75rem 0 0 0.75rem;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--color-bg-darker);
+    transition: all 0.2s;
+  }
+  
+  .input-container input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-primary);
+  }
+  
+  .input-container input.invalid {
+    box-shadow: 0 0 0 2px var(--color-error);
+    animation: shake 0.5s;
+  }
+  
+  .submit-btn {
+    padding: 0 2rem;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 0 0.75rem 0.75rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .submit-btn:hover {
+    background: var(--color-primary-dark);
+  }
+  
+  .submit-btn:disabled {
+    background: var(--color-primary-dark);
+    cursor: not-allowed;
+  }
+  
+  .loading {
+    padding-left: 3rem;
+  }
+  
+  .spinner {
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    left: 1.5rem;
+  }
+  
+  .error-message {
+    color: var(--color-error);
+    margin-top: 0.5rem;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  
+  .error-message small {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+  }
+  
+  /* ========== CTA Section ========== */
+  .hero-cta {
+    margin-top: 2rem;
+  }
+  
+  .cta-text {
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+  }
+  
+  .demo-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .demo-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  
+  .demo-btn.youtube {
+    background: var(--gradient-youtube);
+  }
+  
+  .demo-btn.instagram {
+    background: var(--gradient-instagram);
+    background-size: 200% 200%;
+    animation: instagram-gradient 3s ease infinite;
+  }
+  
+  /* ========== Animations ========== */
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  @keyframes instagram-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* ========== Responsive Styles ========== */
+  @media (max-width: 768px) {
+    .glass-card {
+      padding: 2rem 1.5rem;
+      margin: 1rem;
+      border-radius: 1rem;
+    }
+    
+    .text-primary {
+      font-size: 2rem;
+    }
+    
+    .text-secondary {
+      font-size: 1.1rem;
+    }
+    
+    .input-container {
+      flex-direction: column;
+    }
+    
+    .input-container input,
+    .submit-btn {
+      border-radius: 0.75rem;
+      width: 100%;
+    }
+    
+    .input-container input {
+      margin-bottom: 0.5rem;
+    }
+    
+    .submit-btn {
+      padding: 1rem;
+    }
+    
+    .demo-buttons {
+      flex-direction: column;
+    }
+    
+    .demo-btn {
+      width: 100%;
+    }
+  }

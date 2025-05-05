@@ -1,0 +1,34 @@
+.animated-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    width: 100%;
+  }
+  
+  .animated-section.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Optional: Different animation directions */
+  .animated-section.from-left {
+    transform: translateX(-20px);
+  }
+  
+  .animated-section.from-right {
+    transform: translateX(20px);
+  }
+  
+  .animated-section.from-left.animate-in,
+  .animated-section.from-right.animate-in {
+    transform: translateX(0);
+  }
+  
+  /* For scaling animations */
+  .animated-section.scale {
+    transform: scale(0.95);
+  }
+  
+  .animated-section.scale.animate-in {
+    transform: scale(1);
+  }

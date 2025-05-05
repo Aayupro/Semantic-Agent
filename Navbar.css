@@ -1,0 +1,155 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.4s ease;
+  }
+  
+  /* Regular navbar styles */
+  .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #2563eb;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #334155;
+    transition: color 0.2s;
+    position: relative;
+  }
+  
+  .nav-links a:hover {
+    color: #2563eb;
+  }
+  
+  .nav-links a.active {
+    color: #2563eb;
+    font-weight: 600;
+  }
+  
+  .nav-links a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #2563eb;
+  }
+  
+  .cta-button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .cta-button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  /* Circular navbar styles when scrolled */
+  .navbar.scrolled {
+    justify-content: center;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  
+  .circle-menu {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    top: 1rem;
+  }
+  
+  .circle-menu:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  }
+  
+  .menu-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  
+  /* Dropdown menu */
+  .dropdown-menu {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    animation: fadeIn 0.3s ease;
+    z-index: 1001;
+  }
+  
+  .dropdown-menu a {
+    padding: 0.5rem 1rem;
+    color: #334155;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #f1f5f9;
+  }
+  
+  .dropdown-menu a.active {
+    color: #2563eb;
+    font-weight: 600;
+  }
+  
+  /* Animation for the transformation */
+  @keyframes navbarShrink {
+    from {
+      width: 100%;
+      border-radius: 0;
+    }
+    to {
+      width: 50px;
+      border-radius: 50%;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .navbar.scrolled {
+    animation: navbarShrink 0.4s ease forwards;
+  }

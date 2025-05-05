@@ -1,0 +1,218 @@
+/* Pricing Section */
+.pricing-section {
+    padding: 4rem 2rem;
+    background-color: #f8fafc;
+    text-align: center;
+  }
+  
+  .pricing-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+  }
+  
+  .pricing-header p {
+    color: #64748b;
+    margin-bottom: 2rem;
+  }
+  
+  .pricing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .pricing-toggle span {
+    color: #64748b;
+    font-weight: 500;
+  }
+  
+  .pricing-toggle span.pricing-active {
+    color: #2563eb;
+  }
+  
+  .pricing-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .pricing-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .pricing-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: .4s;
+    border-radius: 24px;
+  }
+  
+  .pricing-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  .pricing-switch input:checked + .pricing-slider {
+    background-color: #2563eb;
+  }
+  
+  .pricing-switch input:checked + .pricing-slider:before {
+    transform: translateX(26px);
+  }
+  
+  .pricing-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .pricing-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pricing-card-featured {
+    border: 1px solid #2563eb;
+    transform: scale(1.05);
+  }
+  
+  .pricing-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: #2563eb;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .pricing-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+  }
+  
+  .pricing-description {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+  }
+  
+  .pricing-amount {
+    margin: 1.5rem 0;
+  }
+  
+  .pricing-amount .pricing-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e293b;
+  }
+  
+  .pricing-amount .pricing-period {
+    font-size: 1rem;
+    color: #64748b;
+  }
+  
+  .pricing-amount .pricing-annual {
+    display: block;
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+  }
+  
+  .pricing-features {
+    text-align: left;
+    margin: 2rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .pricing-features li {
+    padding: 0.5rem 0;
+    color: #475569;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .pricing-features li:before {
+    content: "✓";
+    color: #2563eb;
+    position: absolute;
+    left: 0;
+  }
+  
+  .pricing-button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #e2e8f0;
+    color: #334155;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .pricing-button:hover {
+    background-color: #cbd5e1;
+  }
+  
+  .pricing-button-featured {
+    background-color: #2563eb;
+    color: white;
+  }
+  
+  .pricing-button-featured:hover {
+    background-color: #1d4ed8;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .pricing-cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .pricing-card {
+      max-width: 100%;
+    }
+    
+    .pricing-card-featured {
+      transform: none;
+    }
+  }
